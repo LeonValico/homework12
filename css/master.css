@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+ul {
+  list-style: none;
+}
+h2 {
+  padding-bottom: 20px;
+}
+img {
+  max-width: 250px;
+  max-height: 200px;
+  width: 100%;
+  height: 100%;
+}
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 10vh 40%  40% 10vh;
+  min-height: 100vh;
+  height: auto;
+  min-width: 100vw;
+  width: 100%;
+  padding: 10px;
+}
+.wrap > .left, main, .right, footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px;
+}
+form {
+  padding: 10px;
+}
+input {
+  width: 150px;
+}
+input[type="checkbox"], input[type="radio"] {
+  width: auto;
+}
+header {
+  grid-column: span 12;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  padding: 10px;
+}
+.left {
+  grid-column: span 2;
+  grid-row: 2 / span 2;
+  width: 300px;
+}
+.left label {
+  width: 90px;
+  display: inline-flex;
+  justify-content: flex-start;
+  padding: 10px;
+  padding-left: 0;
+}
+.left li:last-child input{
+  max-width: 230px;
+  width: 100%;
+  margin: 5px;
+  min-height: 100px;
+  height: auto;
+}
+.left h4 {
+  padding: 10px;
+  padding-left: 0;
+}
+main {
+  grid-column: span 8;
+  grid-row: 2 / span 2;
+  width: 100%;
+  height: 75vh;
+}
+main form {
+  display: flex;
+  max-width: 850px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  height: 100%;
+  overflow-y: scroll;
+}
+main div {
+  max-width: 180px;
+  padding: 10px;
+  width: 100%;
+}
+.right {
+  grid-column: span 2;
+  grid-row: 2 / span 2;
+  width: 300px;
+}
+.right form {
+  max-height: 300px;
+  position: relative;
+}
+.right label {
+  width: 250px;
+  display: inline-flex;
+  padding: 10px;
+  padding-left: 0;
+}
+.right img {
+  max-width: 300px;
+  max-height: 250px;
+  position: absolute;
+  bottom: 0;
+  right: -100px;
+  z-index: -1;
+}
+footer {
+  grid-column: span 12;
+  grid-row: 4;
+  justify-content: center;
+}
+@media screen and (max-width:1024px) {
+  .wrap {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  header {
+    grid-column: span 10;
+  }
+  .left {
+    grid-column: span 2;
+    grid-row: 2;
+    max-height: 380px;
+  }
+  .left li:last-child {
+    display: none;
+  }
+  .right {
+    grid-column: span 2;
+    grid-row: 3;
+    max-height: 380px;
+  }
+  footer {
+    grid-column: span 10;
+  }
+}
+@media screen and (max-width:560px) {
+  * {
+    overflow: visible;
+  }
+  .wrap {
+    display: block;
+  }
+  .left {
+    min-height: 700px;
+    height: auto;
+  }
+  .left label{
+    display: block;
+  }
+  main {
+    display: block;
+    height: auto;
+  }
+  .right {
+    height: auto;
+  }
+}
